@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkerboard</title>
+  <style>
+    .board {
+      width: 400px;
+      height: 400px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      border: 4px solid black;
+      margin:200px 400px 200px 500px;
+    }
+    .cell {
+      width: 50px;
+      height: 50px;
+    }
+    .black {
+      background-color: black;
+    }
+    .pink {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="board">
+    <script>
+      for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+          let cell = document.createElement("div");
+          cell.className = "cell " + ((row + col) % 2 === 0 ? "pink" : "black");
+          document.querySelector(".board").appendChild(cell);
+        }
+      }
+    </script>
+  </div>
+
+</body>
+</html>
